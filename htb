@@ -1,0 +1,2 @@
+┌──(nich0las㉿nich0las)-[~]
+└─$ request=$(curl -c cook.txt http://159.65.88.44:32258 | grep -o -P "(?<=h3 align='center'>).*(?=</h3)") && md5=$(echo -n "$request" | md5sum | cut -d ' ' -f 1) && curl -b cook.txt -X POST -d "hash=$md5&submit=Submit" http://159.65.88.44:32258
